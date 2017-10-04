@@ -1,0 +1,34 @@
+<!--
+<form action="/users" method="post" accept-charset="UTF-8">
+	<label for="user[email]">Email:</label>
+	<input type="text" name="user[email]"><br>
+	<label for="user[username]">Username:</label>
+	<input type="text" name="user[username]"><br>
+	<label for="user[password]">Password:</label>
+	<input type="password" name="user[password]"><br>
+	<input type="submit">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
+-->
+
+<!--
+<%= form_tag('/users/') do %>
+	<%= label_tag(:email, "Email:") %><br>
+	<%= text_field_tag(:email) %><br>
+	<%= label_tag(:username, "Username:") %><br>
+	<%= text_field_tag(:username) %><br>
+	<%= label_tag(:password, "Password:") %><br>
+	<%= password_field_tag(:password) %><br>
+	<%= submit_tag("Submit") %>
+<% end %>
+-->
+
+<%= form_for @user do |f| %>
+	<%= f.label :email %><br>
+	<%= f.text_field :email, :value => "example@example.com" %><br>
+	<%= f.label :username %><br>
+	<%= f.text_field :username %><br>
+	<%= f.label :password %><br>
+	<%= f.password_field :password %><br>
+	<%= f.submit "Submit" %>
+<% end %>
